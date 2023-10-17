@@ -79,7 +79,7 @@ authors for making the source code publically available.
 
 
 ## Citing IADG
-If you find TransVOD useful in your research, please consider citing:
+If you find IADG useful in your research, please consider citing:
 ```bibtex
 @inproceedings{zhou2023instance,
   title={Instance-Aware Domain Generalization for Face Anti-Spoofing},
