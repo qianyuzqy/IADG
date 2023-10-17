@@ -1,0 +1,117 @@
+seed: 1234
+torch_home: /path 
+
+dataset:
+  name: DG_Dataset
+  DG_Dataset:
+    use_LMDB: True
+    LMDB_root: /path/to/lmdb_database
+    train_pos_list1_path: /path/to/Replay_Real_list
+    train_neg_list1_path: /path/to/Replay_Fake_list
+    train_pos_list2_path: /path/to/CASIA_Real_list
+    train_neg_list2_path: /path/to/CASIA_Fake_list
+    train_pos_list3_path: /path/to/MSU_Real_list
+    train_neg_list3_path: /path/to/MSU_Fake_list
+    val_pos_list_path: /path/to/Oulu_Test_Real_list
+    val_neg_list_path: /path/to/Oulu_Test_Fake_list
+    test_pos_list_path: /path/to/Oulu_Test_Real_list
+    test_neg_list_path: /path/to/Oulu_Test_Fake_list
+    img_mode: rgb
+    depth_map: True
+    depth_map_size: 32
+    crop_face_from_5points: True
+    crop_face_from_bbox: False
+    margin: 0.7
+    return_path: True
+
+transform:
+  image_size: 256
+  mean: [0.5, 0.5, 0.5]
+  std: [0.5, 0.5, 0.5]
+
+model:
+  name: Framework
+  ckpt_path: 
+  params:
+    in_channels: 3
+    mid_channels: 384
+    model_initial: kaiming
+    total_dkg_flag: True
+    style_dim: 384
+    base_style_num: 128
+    concentration_coeff: 0.0078125
+loss:
+  name: CrossEntropyLoss
+  weight: 1.0
+  params:
+    reduction: mean
+
+loss_2:
+  name: MSELoss
+  weight: 0.1
+  params:
+    reduction: mean
+
+loss_3:
+  name: CrossEntropyLoss
+  weight: 1.0
+  params:
+    reduction: mean
+
+loss_4:
+  name: MSELoss
+  weight: 0.1
+  params:
+    reduction: mean
+
+loss_5:
+  name: AIAWLoss
+  weight: 1.0
+  params:
+    reduction: mean
+
+loss_6:
+  name: AIAWLoss
+  weight: 1.0
+  params:
+    reduction: mean
+
+optimizer:
+  name: Adam
+  params:
+    lr: 0.0001
+    weight_decay: 1.0e-5
+
+scheduler:
+  name: StepLR
+  params:
+    step_size: 10
+    gamma: 0.1
+
+train:
+  epochs: 50
+  batch_size: 5
+  print_interval: 1
+  val_interval: 1
+  iteration_gap: 50
+  alpha: 5e-2
+  proto_select_epoch: 1
+  cov_stat_epoch: 1
+val:
+  batch_size: 5
+
+test:
+  batch_size: 30
+  record_results: True
+
+wandb:
+  project: ANRL
+  group: ICMtoO
+  mode: offline
+  job_type:
+  id:
+  resume:
+  save_code: True
+  name: didgv5_shadev4_piawv1
+  notes:
+
