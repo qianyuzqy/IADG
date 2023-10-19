@@ -52,6 +52,7 @@ The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2023
 Below, we provide all checkpoints, all training logs and inference logs of IADG for different datasets.
 
 [DownLoad Link of Google Drive](https://drive.google.com/drive/folders/15QjIXXbatQmXzwtR7pydsB4Jqscm7Vb6?usp=sharing)
+
 [DownLoad Link of Baidu Netdisk](https://pan.baidu.com/s/1a3snwN6O1IUOtxt6VU-t8Q) (password:26xc)
 
 
