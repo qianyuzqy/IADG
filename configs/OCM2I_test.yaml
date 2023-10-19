@@ -97,8 +97,8 @@ test:
   record_results: True
 
 wandb:
-  project: ANRL
-  group: OCItoM
+  project: IADG
+  group: OCMtoI
   mode: offline
   job_type:
   id:

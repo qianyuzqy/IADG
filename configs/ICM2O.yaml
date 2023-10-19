@@ -105,13 +105,13 @@ test:
   record_results: True
 
 wandb:
-  project: ANRL
+  project: IADG
   group: ICMtoO
   mode: offline
   job_type:
   id:
   resume:
   save_code: True
-  name: didgv5_shadev4_piawv1
+  name: 
   notes:
 
